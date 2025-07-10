@@ -1,36 +1,73 @@
-# Predicción de Comportamiento Financiero con Machine Learning
+# 🫀 Heart Failure Prediction Analysis
 
-Este proyecto utiliza técnicas de Machine Learning para predecir el comportamiento financiero de usuarios, usando datos históricos y modelos supervisados. El objetivo es identificar patrones que permitan tomar decisiones más informadas en escenarios como análisis crediticio o prevención de riesgos.
+## 📌 Descripción del Proyecto
 
-## 📁 Estructura del Proyecto
+Este proyecto tiene como objetivo predecir la **probabilidad de fallo cardíaco** utilizando un conjunto de datos público disponible en **Kaggle**. El análisis incluye la carga de datos, exploración, preprocesamiento y la implementación de modelos de aprendizaje automático para predecir la presencia de enfermedades cardíacas.
 
-- `Prediccion_Cora.ipynb`: Notebook principal que contiene el flujo completo de análisis, desde la carga de datos hasta la predicción.
-- `data/`: Carpeta donde se espera que estén los datasets utilizados (puedes agregar aquí los archivos si son públicos).
-- `models/`: Carpeta opcional para guardar modelos entrenados (si aplica).
+---
 
-## 🔍 Análisis Realizado
+## 📊 Dataset
 
-- **Exploración de datos** (EDA)
-- **Limpieza y transformación**
-- **Feature engineering**
-- **Entrenamiento de modelos**: Se utilizó `XGBoost`, una de las técnicas más potentes para clasificación y regresión.
-- **Evaluación**: Se midió el desempeño mediante métricas como `MSE`, `Accuracy` o `F1-score`.
+El conjunto de datos utilizado es **"Heart Failure Prediction"** de Kaggle, que contiene **918 registros** y **12 características** relacionadas con la salud cardiovascular:
 
-## 🧠 Tecnologías Usadas
+- `Age` — Edad  
+- `Sex` — Sexo  
+- `ChestPainType` — Tipo de dolor en el pecho  
+- `RestingBP` — Presión arterial en reposo  
+- `Cholesterol` — Colesterol  
+- `FastingBS` — Azúcar en sangre en ayunas  
+- `RestingECG` — Electrocardiograma en reposo  
+- `MaxHR` — Frecuencia cardíaca máxima  
+- `ExerciseAngina` — Angina inducida por ejercicio  
+- `Oldpeak` — Depresión del segmento ST  
+- `ST_Slope` — Pendiente del segmento ST  
+- `HeartDisease` — **Variable objetivo** (0 = No, 1 = Sí)  
 
-- Python 3.x
-- Pandas
-- Scikit-learn
-- XGBoost
-- Matplotlib / Seaborn (visualización)
+---
 
-## 📈 Resultados
-El modelo logró una buena capacidad predictiva sobre el conjunto de prueba, lo cual demuestra su potencial para implementarse en escenarios reales de análisis financiero.
+## 🗂️ Estructura del Proyecto
+
+El proyecto está organizado en el archivo `Prediccion_Cora.ipynb`, que incluye las siguientes secciones:
+
+1. **Carga de Paquetes**  
+   Importación de bibliotecas como `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `catboost` y `xgboost`.
+
+2. **Carga de Datos**  
+   Descarga desde Kaggle y carga en un `DataFrame`.
+
+3. **Análisis Exploratorio (EDA)**  
+   - Información general del dataset  
+   - Estadísticas descriptivas  
+   - Detección de valores faltantes  
+   - Visualización de distribuciones y correlaciones
+
+4. **Preprocesamiento**  
+   - División en conjunto de entrenamiento y prueba  
+   - Escalado de características
+
+5. **Modelado**  
+   - Implementación de modelos como `RandomForestClassifier`, `CatBoostClassifier` y `XGBClassifier`  
+   - Optimización de hiperparámetros con `GridSearchCV`  
+   - Evaluación con métricas como **Accuracy**, **AUC-ROC**, y **F1-score**
+
+6. **Resultados**  
+   - Comparación de rendimiento  
+   - Selección del mejor modelo
+
+---
+
+## 🛠️ Requisitos
+
+Instala las bibliotecas necesarias:
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn catboost xgboost kagglehub
+```
 
 ## 👤 Autor
 Pedro David Yacila Aramburú
 Estudiante de Ingeniería Estadística e Informática
-Apasionado por el análisis de datos, machine learning y la prevención de fraudes.
+Apasionado por el análisis de datos, machine learning 
 
 ## 📫 Contacto
 GitHub: YacilaPedro
